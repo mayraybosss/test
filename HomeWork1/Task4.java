@@ -20,9 +20,9 @@ public class Task4 {
 
     public static void whatToDo(boolean a) {
         if (a)
-        System.out.println("Можем спать дальше!");
+        System.out.println("wegiuergheiurgj");
         else
-            System.out.println("Вставай, пора на работу!");
+            System.out.println("asdagdaydg");
     }
 
     public static boolean sleepin(boolean weekday, boolean vacation) {
