@@ -8,3 +8,4 @@ public class AnimalAgeComparator implements Comparator<Animal> {
         return o1.getAge() - o2.getAge();
     }
 }
+//

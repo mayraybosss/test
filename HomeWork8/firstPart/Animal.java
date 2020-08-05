@@ -1,5 +1,5 @@
 package HomeWork8.firstPart;
-
+//
 public class Animal {
 
     private int age;

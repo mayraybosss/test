@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+//
 public class NewMain {
     public static void main(String[] args) throws IOException {
         Path path = Path.of("C:\\Users\\user\\IdeaProjects\\TMP\\src\\HomeWork8\\secondPart\\voinaimir.txt");

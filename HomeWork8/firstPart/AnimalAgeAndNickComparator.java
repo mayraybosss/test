@@ -1,5 +1,5 @@
 package HomeWork8.firstPart;
-
+//
 import java.util.Comparator;
 
 public class AnimalAgeAndNickComparator implements Comparator<Animal> {

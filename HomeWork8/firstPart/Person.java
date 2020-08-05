@@ -1,7 +1,7 @@
 package HomeWork8.firstPart;
 
 public class Person {
-
+    //
     private String nick;
     private String password;
 
