@@ -1,7 +1,7 @@
 package HomeWork9;
 
 /**
- * Загрузчик курса с сайта Альфа Банка
+ * Загрузчик курса с сайта БПС-Сбербанка
  */
 public class BPSLoader extends SiteLoader {
 
