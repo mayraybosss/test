@@ -1,9 +1,9 @@
 package HomeWork9;
 
 /**
- * Загрузчик курса с сайта Нац. Банка
+ * Загрузчик курса с сайта Альфа Банка
  */
-public class NBRBLoader extends SiteLoader {
+public class ALFALoader extends SiteLoader {
 
     /**
      * Метод для запуска загрузки курса валют
@@ -12,8 +12,8 @@ public class NBRBLoader extends SiteLoader {
      * @return курс который мы нашли
      */
     @Override
-    public double load(SiteLoader.Currency currencyName) {
-        return load("https://www.nbrb.by/api/exrates/rates/" + currencyName.getId(), currencyName);
+    public double load(Currency currencyName) {
+        return load("https://developerhub.alfabank.by:8273/partner/1.0.0/public/rates", currencyName);
     }
 
     /**
@@ -24,19 +24,19 @@ public class NBRBLoader extends SiteLoader {
      * @return курс который мы нашли
      */
     @Override
-    protected double handle(String content, SiteLoader.Currency currencyName) {
+    protected double handle(String content, Currency currencyName) {
         //TODO дописываем код сюда
         if (currencyName.getId().equals(Currency.EUR.getId())) {
-            return Double.parseDouble(content.substring(119, content.length() - 2));
+            return Double.parseDouble(content.substring(346, 354)) * Double.parseDouble(content.substring(683, 691));
         } else if (currencyName.getId().equals(Currency.RUB.getId())) {
-            return Double.parseDouble(content.substring(134, content.length() - 2));
+            return Double.parseDouble(content.substring(506, 514));
         } else if (currencyName.getId().equals(Currency.USD.getId())) {
-            return Double.parseDouble(content.substring(125, content.length() - 2));
+            return Double.parseDouble(content.substring(683, 691));
         }
         return 0;
     }
 
     public String toString() {
-        return "НБРБ:";
+        return "АльфаБанк:";
     }
 }

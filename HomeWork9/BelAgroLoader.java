@@ -1,9 +1,9 @@
 package HomeWork9;
 
 /**
- * Загрузчик курса с сайта Нац. Банка
+ * Загрузчик курса с сайта Альфа Банка
  */
-public class NBRBLoader extends SiteLoader {
+public class BelAgroLoader extends SiteLoader {
 
     /**
      * Метод для запуска загрузки курса валют
@@ -12,8 +12,8 @@ public class NBRBLoader extends SiteLoader {
      * @return курс который мы нашли
      */
     @Override
-    public double load(SiteLoader.Currency currencyName) {
-        return load("https://www.nbrb.by/api/exrates/rates/" + currencyName.getId(), currencyName);
+    public double load(Currency currencyName) {
+        return load("https://belapb.by/ExCardsDaily.php?ondate=8/21/2020", currencyName);
     }
 
     /**
@@ -24,19 +24,19 @@ public class NBRBLoader extends SiteLoader {
      * @return курс который мы нашли
      */
     @Override
-    protected double handle(String content, SiteLoader.Currency currencyName) {
+    protected double handle(String content, Currency currencyName) {
         //TODO дописываем код сюда
         if (currencyName.getId().equals(Currency.EUR.getId())) {
-            return Double.parseDouble(content.substring(119, content.length() - 2));
+            return Double.parseDouble(content.substring(613, 619));
         } else if (currencyName.getId().equals(Currency.RUB.getId())) {
-            return Double.parseDouble(content.substring(134, content.length() - 2));
+            return Double.parseDouble(content.substring(945, 951));
         } else if (currencyName.getId().equals(Currency.USD.getId())) {
-            return Double.parseDouble(content.substring(125, content.length() - 2));
+            return Double.parseDouble(content.substring(283, 289));
         }
         return 0;
     }
 
     public String toString() {
-        return "НБРБ:";
+        return "БелАгроПромБанк:";
     }
 }
